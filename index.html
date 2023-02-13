@@ -1,6 +1,8 @@
 <!DOCTYPE html> 
 <html> 
 <head> 
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 	<title>Calcul du coût de l'escompte</title> 
 	<style> 
 		.container { 
@@ -59,6 +61,8 @@
 		</form> 
 		<p id="result"> 
 		</p> 
+		<p id="reel"> 
+		</p> 
 	</div> 
 	<script> 
 		function calculateDiscountCost() {
@@ -71,7 +75,11 @@ let dueDate = new Date(document.querySelector("#dueDate").value);
 let diff = dueDate.getTime() - discountDate.getTime();
 let days = diff / (1000 * 3600 * 24);
 let discountCost = (amount * discountRate * days) / 36500;
-document.querySelector("#result").innerHTML = "Le coût de l'escompte est de : " + discountCost.toFixed(2) + " €";
+let discountreel = discountCost / amount*100;
+
+document.querySelector("#result").innerHTML = "Le coût de l'escompte est de : " + discountCost.toFixed(2) + " DHS";
+document.querySelector("#reel").innerHTML = "Le taux du coût d'escompte par rapport au Montant escompter est de  : " + discountreel.toFixed(2) + " %";
+
 }
 </script>
 
