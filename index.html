@@ -62,6 +62,8 @@
 	</div> 
 	<script> 
 		function calculateDiscountCost() {
+			  event.preventDefault();
+
 let amount = document.querySelector("#amount").value;
 let discountRate = document.querySelector("#discountRate").value;
 let discountDate = new Date(document.querySelector("#discountDate").value);
